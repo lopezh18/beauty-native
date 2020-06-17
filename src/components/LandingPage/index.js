@@ -15,7 +15,10 @@ const LandingPage = () =>(
         Selina McManus
       </NameContainer>
       <LandingPageButton
-        classes={{ label: 'label' }}
+        classes={{
+          root: 'button',
+          label: 'label',
+        }}
         focusRipple
         href='/about'
       >

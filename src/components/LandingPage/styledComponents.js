@@ -36,20 +36,23 @@ export const ContentContainer = styled.div`
 export const NameContainer = styled.div`
   font-family: canterburyregular, serif;
   font-size: 3.25rem;
-  font-weight:normal;
+  font-weight: normal;
   text-align: center;
 `;
 
 export const LandingPageButton = styled(ButtonBase)`
   background-color: transparent;
-  color: #000;
+  &.button {
+    border: .06rem solid #000;
+    border-radius: 0;
+  }
   .label {
     font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
+    font-size: .8rem;
     font-weight: 560;
   }
   :hover {
-    border: .15rem solid #000;
+    border: .14rem solid #000;
     border-radius: 0;
   }
 `;
