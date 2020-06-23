@@ -1,22 +1,53 @@
 import React from 'react';
-import { contentDetails } from './details';
+import { v4 as uuid } from 'uuid';
+
+import { contentDetails, featuredData } from './details';
 import {
   AboutDetails,
+  AnchorWrapper,
   ContentContainer,
-  SubTitle,
+  FeaturedContainer,
+  FeaturedImageContainer,
+  StyledAnchor,
+  StyledImage,
   Title,
 } from './styledComponents';
 
-const Content = () => (
-  <ContentContainer>
-    <Title>Selina McManus</Title>
-    <SubTitle>@_beautynative</SubTitle>
-    <AboutDetails>flannel | master | flexitarian | brunch </AboutDetails>
-    {contentDetails.map(({ header, details }) => (
-      <AboutDetails> {header}: {details} </AboutDetails>
-     ))}
-     <AboutDetails>Featured:</AboutDetails>
-  </ContentContainer>
-)
+const Content = () => {
+  return (
+    <ContentContainer>
+      <Title>Selina McManus</Title>
+      <AnchorWrapper>
+        <StyledAnchor 
+          href='https://www.instagram.com/_beautynative/'
+          rel='noreferrer noopener'
+          target='_blank'
+        >
+          @_beautyNative
+      </StyledAnchor>
+      </AnchorWrapper>
+      <AboutDetails>flannel | master | flexitarian | brunch </AboutDetails>
+      {contentDetails.map(({ header, details }) => (
+        <AboutDetails
+          key={uuid()}
+          leftAlign
+        >
+          {header}: {details}
+        </AboutDetails>
+      ))}
+      <AboutDetails>Featured:</AboutDetails>
+      <FeaturedContainer>
+        {featuredData.map(({ alt, img }, idx) => (
+          <FeaturedImageContainer
+            key={uuid()}
+            center={idx !== 0 && idx !== featuredData.length-1}
+          >
+            <StyledImage src={img} alt={alt}/>
+          </FeaturedImageContainer>
+        ))}
+      </FeaturedContainer>
+    </ContentContainer>
+  );
+};
 
 export default Content;

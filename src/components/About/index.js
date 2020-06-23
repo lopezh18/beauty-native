@@ -1,18 +1,12 @@
 import React from 'react';
-import {
-  AboutContainer,
-  ContentContainer,
-  ImageContainer,
-  Title,
-} from './styledComponents';
-
+import { AboutContainer } from './styledComponents';
 import Content from './Content';
+import Image from './Image';
+
 
 const About = () => (
   <AboutContainer>
-    <ImageContainer>
-      IMAGE
-    </ImageContainer>
+    <Image />
     <Content />
   </AboutContainer>
 )

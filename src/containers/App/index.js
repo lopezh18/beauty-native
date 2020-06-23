@@ -1,6 +1,5 @@
 import React from 'react';
 import Main from '../Main';
-import MainTest from '../MainTest';
 import { BrowserRouter } from 'react-router-dom';
 
 const App = () => (

@@ -1,12 +1,27 @@
 import React from 'react';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
+
+import {
+  FooterWrapper,
+  StyledAnchor,
+} from './styledComponents';
 
 const Footer = () => (
-  <BottomNavigation>
-    <div>
-      Footer
-    </div>
-  </BottomNavigation>
+  <FooterWrapper>
+    <StyledAnchor
+      href='https://www.facebook.com/beautynativeselinam'
+      rel='noreferrer noopener'
+      target='_blank'
+    >
+    <i className="fab fa-facebook" />
+    </StyledAnchor>
+    <StyledAnchor
+      href='https://www.instagram.com/_beautynative/'
+      rel='noreferrer noopener'
+      target='_blank'
+    >
+      <i className="fab fa-instagram"></i>
+    </StyledAnchor>
+  </FooterWrapper>
 );
 
 export default Footer;

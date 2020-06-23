@@ -1,16 +1,18 @@
 import React from 'react';
+import { v4 as uuid } from 'uuid';
+
 import AppBar from '@material-ui/core/AppBar';
-import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import ListItem from '@material-ui/core/ListItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
-import { navLinks, pageHeaders } from './helpers';
+import { navLinks } from './helpers';
 import {
   MobileDrawer,
   MobileLinkContainer,
   MobileListContainer,
+  StyledAppBar,
   StyledLink,
   Title,
 } from './styledComponents';
@@ -23,11 +25,15 @@ function MobileNav(props) {
     setMobileOpen(!mobileOpen);
   }; 
   const location = window.location.pathname;
-  console.log(window.location.pathname);
-
+  const { header } = navLinks[location];
+  const { title } = navLinks[location];
+  const mobileHeader = header || title;
   return (
     <Hidden smUp>
-      <AppBar position="fixed">
+      <StyledAppBar
+        classes={{ root: 'root' }}
+        position="fixed"
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -38,10 +44,10 @@ function MobileNav(props) {
             <MenuIcon />
           </IconButton>
           <Title>
-            {pageHeaders[location]}
+            {mobileHeader}
           </Title>
         </Toolbar>
-      </AppBar>
+      </StyledAppBar>
       <MobileDrawer
         anchor='left'
         classes={{ paper: 'paper' }}
@@ -53,10 +59,10 @@ function MobileNav(props) {
         <MobileLinkContainer>
           <img alt="beauty-native" src={beautyNativeLogo}/>
             <MobileListContainer classes={{ padding: 'padding'}} dense>
-              {navLinks.map((navLinks, idx) => (
-                <ListItem key={idx} button classes={{ root: 'root' }}>
-                  <StyledLink exact to={navLinks.href}>
-                    {navLinks.title}
+              {Object.keys(navLinks).map((route) => (
+                <ListItem key={uuid()} button classes={{ root: 'root' }}>
+                  <StyledLink exact to={route}>
+                    {navLinks[route].title}
                   </StyledLink>
                 </ListItem>
               ))}

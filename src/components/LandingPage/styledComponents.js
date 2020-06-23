@@ -9,7 +9,7 @@ export const MainContainer = styled.section`
   width: 100%;
 `;
 
-export const TestContainer = styled.div`
+export const GradientContainer = styled.div`
   align-items: center;
   background: 
     linear-gradient(115deg, rgb(11, 204, 238) 0%, rgb(48, 150, 156) 0%, rgb(132, 202, 202) 24.0458%, rgb(151, 214, 212) 48.855%, rgb(197, 139, 111) 100%);

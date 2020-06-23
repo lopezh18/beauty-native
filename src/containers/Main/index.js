@@ -1,8 +1,7 @@
 import React from 'react';
 import Hidden from '@material-ui/core/Hidden';
 import { makeStyles } from '@material-ui/core/styles';
-import DesktopNav from '../../components/NavBar/DesktopNav';
-import MobileNav from '../../components/NavBar/MobileNav';
+import { DesktopNav, MobileNav } from '../../components/NavBar/index';
 import ConditionalRender from '../../components/ConditionalRender/index';
 import Footer from '../../components/Footer';
 import { Body, MainContainer } from './styledComponents';
@@ -20,27 +19,30 @@ function ToolbarPlaceholder() {
       <div className={classes.toolbar} />
     </Hidden>
   );
-}
+};
 
 const Main = () => {
-  const isHomepage = window.location.pathname !== '/';
+  const isHomepage = window.location.pathname === '/';
   return (
     <Body>
       <ConditionalRender
         Component={DesktopNav}
-        shouldRender={isHomepage}
+        shouldRender={!isHomepage}
       />
       <ConditionalRender
         Component={MobileNav}
-        shouldRender={isHomepage}
+        shouldRender={!isHomepage}
       />
-      <MainContainer>
+      <MainContainer removePadding={isHomepage}>
         <ConditionalRender
           Component={ToolbarPlaceholder}
-          shouldRender={isHomepage}
+          shouldRender={!isHomepage}
         />
         <Routes />
-        <Footer />
+        <ConditionalRender
+          Component={Footer}
+          shouldRender={!isHomepage}
+        />
       </MainContainer>
     </Body>
   );

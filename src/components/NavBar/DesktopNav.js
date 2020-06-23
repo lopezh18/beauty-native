@@ -1,4 +1,6 @@
 import React from 'react';
+import { v4 as uuid } from 'uuid';
+
 import { Hidden } from '@material-ui/core';
 import {
   Item,
@@ -21,10 +23,10 @@ const DesktopNav = () => (
     <LinkContainer>
       <img alt="beauty-native" src={beautyNativeLogo}/>
       <ListContainer classes={{ padding: 'padding'}} dense>
-        {navLinks.map((navLinks, idx) => (
-          <Item key={idx} button classes={{ root: 'root' }}>
-            <StyledLink exact to={navLinks.href}>
-              {navLinks.title}
+        {Object.keys(navLinks).map((route) => (
+          <Item key={uuid()} button classes={{ root: 'root' }}>
+            <StyledLink exact to={route}>
+              {navLinks[route].title}
             </StyledLink>
           </Item>
         ))}

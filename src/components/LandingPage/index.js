@@ -1,15 +1,15 @@
 import React from 'react';
 import {
   ContentContainer,
+  GradientContainer,
   LandingPageButton,
   MainContainer,
   NameContainer,
-  TestContainer,
 } from './styledComponents';
 
 const LandingPage = () =>(
   <MainContainer>
-    <TestContainer />
+    <GradientContainer />
     <ContentContainer>
       <NameContainer>
         Selina McManus

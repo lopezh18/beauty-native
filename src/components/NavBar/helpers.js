@@ -1,25 +1,19 @@
-export const navLinks = [
-  {
+export const navLinks = {
+  '/about': {
     title: 'About',
-    href: '/about',
   },
-  {
+  '/blog': {
+    header: 'Blog NAME',
     title: 'Blog',
-    href: '/blog',
   },
-  {
+  '/merch': {
+    header: 'Store NAME',
     title: 'Merch',
-    href: '/merch',
   },
-  {
+  '/faq': {
     title: 'FAQ',
-    href: '/faq',
   },
-];
-
-export const pageHeaders = {
-  '/about': 'About',
-  '/blog': 'Blog',
-  '/merch': 'Merch',
-  '/faq': 'FAQ',
+  '/gallery': {
+    title: 'Gallery',
+  }
 };

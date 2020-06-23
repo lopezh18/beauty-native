@@ -1,4 +1,6 @@
 import React from 'react';
+import { v4 as uuid } from 'uuid';
+
 import AppBar from '@material-ui/core/AppBar';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
@@ -17,7 +19,7 @@ import {
   Title,
 } from '../../components/NavBar/styledComponents';
 import { Body } from '../Main/styledComponents';
-import { navLinks, pageHeaders } from '../../components/NavBar/helpers';
+import { navLinks } from '../../components/NavBar/helpers';
 import Routes from '../Main/routes';
 
 const useStyles = makeStyles((theme) => ({
@@ -47,7 +49,7 @@ function ResponsiveDrawer() {
                 <MenuIcon />
               </IconButton>
               <Title>
-                {pageHeaders[location]}
+                {navLinks[location].header}
               </Title>
             </Toolbar>
           </AppBar>
@@ -64,8 +66,8 @@ function ResponsiveDrawer() {
             <MobileLinkContainer>
               <img alt="beauty-native" src={beautyNativeLogo}/>
               <MobileListContainer classes={{ padding: 'padding'}} dense>
-                {navLinks.map((navLinks, idx) => (
-                  <ListItem key={idx} button classes={{ root: 'root' }}>
+                {navLinks.map((navLinks) => (
+                  <ListItem key={uuid()} button classes={{ root: 'root' }}>
                     <StyledLink exact to={navLinks.href}>
                       {navLinks.title}
                     </StyledLink>
@@ -85,8 +87,8 @@ function ResponsiveDrawer() {
           <LinkContainer>
             <img alt="beauty-native" src={beautyNativeLogo}/>
               <MobileListContainer classes={{ padding: 'padding'}} dense>
-                {navLinks.map((navLinks, idx) => (
-                  <ListItem key={idx} button classes={{ root: 'root' }}>
+                {navLinks.map((navLinks) => (
+                  <ListItem key={uuid()} button classes={{ root: 'root' }}>
                     <StyledLink exact to={navLinks.href}>
                       {navLinks.title}
                     </StyledLink>
