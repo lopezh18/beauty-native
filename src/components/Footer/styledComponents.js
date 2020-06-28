@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { materialUiMediaQueries } from '../../breakpoints';
 
 export const FooterWrapper = styled.footer`
   background-color: white;
@@ -8,7 +9,11 @@ export const FooterWrapper = styled.footer`
   position: fixed;
   right: 0;
   text-align: center;
-  width: 100%;
+  width: inherit;
+
+  ${materialUiMediaQueries.md} {
+    left: 10%;
+  }
 `;
   
   export const StyledAnchor = styled.a`

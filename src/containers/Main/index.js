@@ -1,8 +1,8 @@
 import React from 'react';
 import Hidden from '@material-ui/core/Hidden';
 import { makeStyles } from '@material-ui/core/styles';
-import { DesktopNav, MobileNav } from '../../components/NavBar/index';
-import ConditionalRender from '../../components/ConditionalRender/index';
+import { DesktopNav, MobileNav } from '../../components/NavBar';
+import ConditionalRender from '../../components/ConditionalRender';
 import Footer from '../../components/Footer';
 import { Body, MainContainer } from './styledComponents';
 import Routes from './routes';

@@ -5,6 +5,7 @@ import test1 from '../../images/test1.jpg';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import Toolbar from '@material-ui/core/Toolbar';
 
 export const MobileDrawer = styled(Drawer)`
   .paper {
@@ -80,11 +81,7 @@ export const MobileListContainer = styled(List)`
 
 export const StyledAppBar = styled(AppBar)`
   &.root {
-    background: 
-    linear-gradient(115deg, rgb(11, 204, 238) 0%, rgb(48, 150, 156) 0%, rgb(132, 202, 202) 24.0458%, rgb(151, 214, 212) 48.855%, rgb(197, 139, 111) 100%);
-    color: black;
+    color: white;
   }
-  background: url(${test1});
-  background-size: cover;
-  `;
+`;
   

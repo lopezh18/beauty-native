@@ -27,4 +27,3 @@ export const featuredData = [
     img: test,
   },
 ];
-

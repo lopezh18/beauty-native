@@ -1,7 +1,6 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
 
-import { contentDetails, featuredData } from './details';
 import {
   AboutDetails,
   AnchorWrapper,
@@ -13,7 +12,7 @@ import {
   Title,
 } from './styledComponents';
 
-const Content = () => {
+const Content = ({ contentData: { contentDetails, featuredData }}) => {
   return (
     <ContentContainer>
       <Title>Selina McManus</Title>
